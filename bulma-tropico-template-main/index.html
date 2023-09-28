@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Palindromo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@2/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+    <script>
+      function esPalindromo() {
+        var palin = document.getElementById("cadena").value.toLowerCase();
+        var Cadena = document.getElementById("cadena").value.toLowerCase();
+        Cadena = Cadena.replace(/[^a-zA-Z0-9]/g, '');
+        var alrevez = Cadena.split('').reverse().join('');
+
+        if (Cadena === alrevez) {
+          document.getElementById("palindromo").innerHTML = palin;
+          document.getElementById("validar").innerHTML = "SI";
+        } else {
+          document.getElementById("palindromo").innerHTML = palin;
+          document.getElementById("validar").innerHTML = "NO";
+        }
+      }
+    </script>
+
+  </head>
+
+  <body>
+
+
+    <section class="section" id="carousel-section">
+      <div class="container">
+        <div class="carousel pb-6" style="overflow: hidden">
+          <div class="item-1">
+            <div class="columns">
+              <div class="column is-half">
+                <p>Ingresa una palabra o frase:</p>
+                <br>
+                <input type="text" id="cadena" placeholder="Escribe aquí">
+                <br>
+                <br>
+                <button onclick="esPalindromo()">Revisar</button>
+                <br>
+                <br>
+                <table border="3px solid purple">
+                  <tr>
+                    <td width="200">
+                      <center><b><h2>Palabra o frase</h2></b></center>
+                    </td>
+                    <td width="200">
+                      <center><b><h2>Es palindromo</h2></b></center>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="200">
+                      <center><p id="palindromo"></p></center>
+                    </td>
+                    <td width="200">
+                      <center><p id="validar"></p></center>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <!-- Slide Content -->
+          </div>
+        </div>
+        <!-- End Carousel -->
+      </div>
+    </section>
+
+    <section class="section">
+
+    </section>
+
+    <section class="section" id="contact-section">
+
+    </section>
+
+    <section class="map-section">
+
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+      </div>
+
+      <footer class="footer-secondary">
+
+      </footer>
+    </section>
+  </body>
+</html>
+
+<script>
+  bulmaCarousel.attach('#carousel-demo', {
+    initialSlide: 0,
+    slidesToScroll: 1,
+    slidesToShow: 1,
+  });
+</script>
